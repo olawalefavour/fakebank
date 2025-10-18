@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nino Bank — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo">Nino</span>
+      <span class="brand-sub">Bank (Demo)</span>
+    </div>
+    <nav class="nav">
+      <button id="btn-logout" class="btn ghost hidden">Logout</button>
+    </nav>
+  </header>
+
+  <main id="root" class="main">
+    <!-- Login / Signup -->
+    <section id="auth" class="card auth-card">
+      <h1>Welcome to Nino Bank</h1>
+      <p class="muted">A simple prototype for idea-stage demos</p>
+
+      <div class="tabs">
+        <button id="tab-login" class="tab active">Login</button>
+        <button id="tab-signup" class="tab">Sign up</button>
+      </div>
+
+      <form id="form-login" class="form">
+        <label>Email
+          <input type="email" id="login-email" placeholder="you@example.com" required />
+        </label>
+        <label>Password
+          <input type="password" id="login-password" placeholder="password" required />
+        </label>
+        <button type="submit" class="btn">Login</button>
+        <p class="note">Demo accounts are stored locally in your browser.</p>
+      </form>
+
+      <form id="form-signup" class="form hidden">
+        <label>Full name
+          <input type="text" id="signup-name" placeholder="John Doe" required />
+        </label>
+        <label>Email
+          <input type="email" id="signup-email" placeholder="you@example.com" required />
+        </label>
+        <label>Password
+          <input type="password" id="signup-password" placeholder="Create password" required />
+        </label>
+        <button type="submit" class="btn">Create account</button>
+        <p class="note">This will create a mock account saved in your browser (localStorage).</p>
+      </form>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="hidden container">
+      <div class="grid">
+        <div class="card balance-card">
+          <h3>Account balance</h3>
+          <p id="balance-amount" class="big">₦0.00</p>
+          <small id="account-owner" class="muted">—</small>
+        </div>
+
+        <div class="card transfer-card">
+          <h3>Quick transfer</h3>
+          <form id="transfer-form" class="form-inline">
+            <input id="to-account" placeholder="Recipient email" required />
+            <input id="amount" type="number" min="1" placeholder="Amount" required />
+            <button class="btn small" type="submit">Send</button>
+          </form>
+          <p id="transfer-msg" class="muted small"></p>
+        </div>
+
+        <div class="card history-card">
+          <h3>Transactions</h3>
+          <ul id="tx-list" class="tx-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <small>Prototype — Nino Bank · Not for production</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
